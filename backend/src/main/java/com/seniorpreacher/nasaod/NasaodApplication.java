@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -21,9 +22,9 @@ public class NasaodApplication {
     }
 
     @RequestMapping("/")
-    public List paragraphRoute() {
+    public List paragraphRoute(@RequestParam(name = "offset") int offset, @RequestParam(name = "limit") int limit) {
         List responseParagraphs = new ArrayList<ParagraphResponse>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = offset; i < offset + limit; i++) {
             responseParagraphs.add(new ParagraphResponse(i, this.paragraphService.getParagraph()));
         }
         return responseParagraphs;
