@@ -10,7 +10,7 @@ class ParagraphServiceImpl implements ParagraphService{
     }
 
     @Override
-    public String getTextChunk(int wordCount, int limit, int offset) {
-        return lorem.getWords(wordCount, wordCount);
+    public String getParagraph() {
+        return lorem.getParagraphs(2, 4);
     }
 }

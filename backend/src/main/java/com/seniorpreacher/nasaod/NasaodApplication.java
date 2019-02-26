@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootApplication
 @RestController
 public class NasaodApplication {
@@ -18,7 +21,11 @@ public class NasaodApplication {
     }
 
     @RequestMapping("/")
-    public String paragraphRoute() {
-        return this.paragraphService.getTextChunk(20, 0, 0);
+    public List paragraphRoute() {
+        List responseParagraphs = new ArrayList<ParagraphResponse>();
+        for (int i = 0; i < 20; i++) {
+            responseParagraphs.add(new ParagraphResponse(i, this.paragraphService.getParagraph()));
+        }
+        return responseParagraphs;
     }
 }
