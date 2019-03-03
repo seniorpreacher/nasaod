@@ -13,7 +13,7 @@ export class ContentReaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.paragraphs = this.contentService.getMoreData(100);
+    this.paragraphs = this.contentService.getData(20, 100);
   }
 
 }

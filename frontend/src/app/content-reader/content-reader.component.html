@@ -1,5 +1,5 @@
 <div class="content-container">
-  <cdk-virtual-scroll-viewport class="virtual-scroll-viewport" itemSize="10">
+  <cdk-virtual-scroll-viewport class="virtual-scroll-viewport" [itemSize]="20">
     <ng-container *cdkVirtualFor="let p of paragraphs">
       <p attr.data-paragraph-id="{{p.id}}">{{p.content}}</p>
     </ng-container>

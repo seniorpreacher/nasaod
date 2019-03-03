@@ -7,5 +7,13 @@
   .virtual-scroll-viewport
     height calc(100vh - 96px)
   p
+    position relative
     width 80%
     margin 2rem auto
+    &::before
+      content attr(data-paragraph-id) ". "
+      position absolute
+      left -50px
+      width 40px
+      text-align right
+      color #ccc
