@@ -1,4 +1,4 @@
-interface Paragraph {
+export interface Paragraph {
   id: number;
   content: string;
 }

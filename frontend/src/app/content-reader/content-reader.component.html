@@ -1,7 +1,10 @@
 <div class="content-container">
-  <cdk-virtual-scroll-viewport class="virtual-scroll-viewport" [itemSize]="20">
-    <ng-container *cdkVirtualFor="let p of paragraphs">
-      <p attr.data-paragraph-id="{{p.id}}">{{p.content}}</p>
-    </ng-container>
+  <cdk-virtual-scroll-viewport
+    class="virtual-scroll-viewport"
+    autosize>
+    <p *cdkVirtualFor="let p of dataSource" attr.data-paragraph-id="{{p.id}}">
+      {{p.content || 'Loading...'}}
+    </p>
   </cdk-virtual-scroll-viewport>
+  <!--<a (click)="onLoadMore()" href="#">Load more...</a>-->
 </div>
