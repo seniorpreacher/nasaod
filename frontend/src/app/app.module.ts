@@ -4,8 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ContentReaderComponent} from './content-reader/content-reader.component';
-import {ContentService} from './content.service';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+import {VirtualScrollerModule} from 'ngx-virtual-scroller';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
   ],
   imports: [
     BrowserModule,
-    ScrollingModule
+    VirtualScrollerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

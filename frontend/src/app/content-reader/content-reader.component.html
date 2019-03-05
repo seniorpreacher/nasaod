@@ -1,7 +1,11 @@
 <div class="content-container">
-  <cdk-virtual-scroll-viewport class="virtual-scroll-viewport" [itemSize]="20">
-    <ng-container *cdkVirtualFor="let p of paragraphs">
-      <p attr.data-paragraph-id="{{p.id}}">{{p.content}}</p>
-    </ng-container>
-  </cdk-virtual-scroll-viewport>
+  <virtual-scroller [items]="buffer"
+                    [enableUnequalChildrenSizes]="true"
+                    [bufferAmount]="9"
+                    (vsUpdate)="scrollItems = $event"
+                    (vsEnd)="fetchMore($event)">
+    <p *ngFor="let p of scrollItems" attr.data-paragraph-id="{{p.id}}">{{p.content}}</p>
+    <div *ngIf="loading" class="loader">Loading...</div>
+  </virtual-scroller>
 </div>
+
