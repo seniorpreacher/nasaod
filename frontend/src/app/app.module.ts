@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ContentReaderComponent} from './content-reader/content-reader.component';
 import {VirtualScrollerModule} from 'ngx-virtual-scroller';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {VirtualScrollerModule} from 'ngx-virtual-scroller';
   ],
   imports: [
     BrowserModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
