@@ -1,6 +1,6 @@
-package com.seniorpreacher.nasaod;
+package com.seniorpreacher.nasaod.api.model;
 
-class ParagraphResponse {
+public class ParagraphResponse {
     private int id;
     private String content;
 
