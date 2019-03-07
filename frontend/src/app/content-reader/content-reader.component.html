@@ -4,7 +4,7 @@
                     [bufferAmount]="9"
                     (vsUpdate)="scrollItems = $event"
                     (vsEnd)="fetchMore($event)">
-    <p *ngFor="let p of scrollItems" attr.data-paragraph-id="{{p.id}}">{{p.content}}</p>
+    <p *ngFor="let p of scrollItems" [attr.data-paragraph-id]="p.id" [innerHTML]="p.content"></p>
     <div *ngIf="loading" class="loader">Loading...</div>
   </virtual-scroller>
 </div>
