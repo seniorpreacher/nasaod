@@ -4,17 +4,15 @@
 
 If you have Docker installed, just run the following commands
 
-### 1. Package
+### 1. Build image
 
-`./mvnw package`
+`docker build -t seniorpreacher/nasaod .`
 
-### 2. Build image
+### 2. Run the container
 
-`docker build -t seniorpreacher/nasaod . `
+`docker run -p 8080:8080 --name nasaod-backend seniorpreacher/nasaod`
 
-### 3. Run the container
-
-` docker run -p 8080:8080 --name nasaod-backend seniorpreacher/nasaod`
+When running it for the second or later time, you can remove the previous container by running `docker rm nasaod-backend`.
 
 ## Run without Docker
 
