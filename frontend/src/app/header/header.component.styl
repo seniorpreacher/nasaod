@@ -1,27 +1,42 @@
 bg_color = #fff
+stat_border_color = #d47575
+sans_serif_font = 'Montserrat', sans-serif
 
-h1
+#header
   position fixed
   top 0
   left 0
   width 100%
   margin-top 0
-  padding 2rem 0 0.5rem
-
-  text-align center
-  font-family 'Montserrat', sans-serif
-  font-weight 100
-  font-size 1.5rem
-  letter-spacing -0.1rem
 
   color #888
   background bg_color
   box-shadow bg_color 0 0px 50px 40px
 
-  z-index 100
+  z-index 10
+  h1
+    padding 2rem 0 0.5rem
 
-  @media (min-width: 460px)
-    font-size 2rem
+    text-align center
+    font-family sans_serif_font
+    font-weight 100
+    font-size 1.5rem
+    letter-spacing -0.1rem
 
-  @media (min-width: 600px)
-    font-size 2.5rem
+    @media (min-width: 460px)
+      font-size 2rem
+
+    @media (min-width: 600px)
+      font-size 2.5rem
+  .statistics
+    display inline-block
+    position absolute
+    top 0
+    margin .7rem
+    padding 0.3rem 1rem
+    border stat_border_color 3px solid
+    border-radius 0.7rem
+    font-family sans_serif_font
+    @media (min-width: 600px)
+      margin 1rem
+      padding 0.5rem 1rem
