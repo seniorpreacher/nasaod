@@ -1,13 +1,14 @@
-import {Paragraph} from './paragraph.interface';
+import {Paragraph} from '../paragraph.interface';
 import {HttpClient} from '@angular/common/http';
 import {EventEmitter, Injectable} from '@angular/core';
+import {ContentServiceInterface} from './content.service.interface';
 
 const BACKEND_URL = 'http://localhost:8080/';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContentService {
+export class ContentService implements ContentServiceInterface {
   constructor(private http: HttpClient) {
   }
 

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {ContentService} from '../content.service';
+import {ContentService} from '../content/content.service';
 import {Paragraph} from '../paragraph.interface';
 import {ChangeEvent} from 'ngx-virtual-scroller';
 

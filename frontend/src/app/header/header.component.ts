@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ContentService} from '../content.service';
+import {ContentService} from '../content/content.service';
 
 @Component({
   selector: 'app-header',
